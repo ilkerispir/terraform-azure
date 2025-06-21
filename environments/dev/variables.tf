@@ -8,23 +8,18 @@ variable "environment" {
   type        = string
 }
 
-variable "address_space" {
-  description = "The address space for the virtual network in CIDR format."
-  type        = list(string)
-}
-
 variable "location" {
   description = "The Azure region where the virtual network will be created."
   type        = string
 }
 
-variable "subnet_prefixes" {
-  description = "A list of subnet prefixes in CIDR format."
+variable "address_space" {
+  description = "The address space for the virtual network in CIDR format."
   type        = list(string)
 }
 
-variable "subnet_names" {
-  description = "A list of subnet names."
+variable "subnet_prefixes" {
+  description = "A list of subnet prefixes in CIDR format."
   type        = list(string)
 }
 

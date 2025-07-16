@@ -36,8 +36,25 @@ variable "vm_size" {
   default     = "Standard_DS2_v2"
 }
 
+variable "os_sku" {
+  description = "The OS SKU to be used for the default node pool. (e.g. 'AzureLinux' or 'Ubuntu')"
+  type        = string
+  default     = "AzureLinux"
+}
+
+variable "subnet_id" {
+  description = "The ID of the subnet in which the AKS cluster's default node pool will be deployed."
+  type        = string
+}
+
+variable "kubernetes_version" {
+  description = "The Kubernetes version to use for the cluster."
+  type        = string
+  default     = null
+}
+
 variable "tags" {
-  description = "A mapping of tags to assign to the resource."
+  description = "A mapping of tags to assign to the AKS resources."
   type        = map(string)
   default     = {}
 }

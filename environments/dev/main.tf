@@ -28,15 +28,17 @@ module "vnet" {
 module "aks" {
   source = "../../modules/aks"
 
-  name                = "${var.app_name}-${var.environment}-aks"
-  dns_prefix          = "${var.app_name}-${var.environment}"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  name                   = "${var.app_name}-${var.environment}-aks"
+  dns_prefix             = "${var.app_name}-${var.environment}"
+  location               = azurerm_resource_group.rg.location
+  resource_group_name    = azurerm_resource_group.rg.name
 
   default_node_pool_name = "default"
-  node_count             = 0
   vm_size                = "Standard_B2s"
-  os_sku                 = "AzureLinux"
+  os_sku                 = "CBLMariner"
+
+  min_count              = 0
+  max_count              = 1
 
   subnet_id             = module.vnet.subnet_ids[0]
   kubernetes_version    = "1.32.5"

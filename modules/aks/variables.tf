@@ -58,3 +58,15 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "min_count" {
+  description = "Minimum number of nodes for autoscaling."
+  type        = number
+  default     = 0
+}
+
+variable "max_count" {
+  description = "Maximum number of nodes for autoscaling."
+  type        = number
+  default     = 1
+}

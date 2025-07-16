@@ -37,7 +37,7 @@ module "aks" {
   vm_size                = "Standard_B2s"
   os_sku                 = "CBLMariner"
 
-  min_count              = 0
+  min_count              = 1
   max_count              = 1
 
   subnet_id             = module.vnet.subnet_ids[0]

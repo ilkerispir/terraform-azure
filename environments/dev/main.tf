@@ -36,9 +36,7 @@ module "aks" {
   default_node_pool_name = "default"
   vm_size                = "Standard_B2s"
   os_sku                 = "CBLMariner"
-
-  min_count              = 1
-  max_count              = 1
+  node_count             = 1
 
   subnet_id             = module.vnet.subnet_ids[0]
   kubernetes_version    = "1.33.1"

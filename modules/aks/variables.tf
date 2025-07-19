@@ -59,14 +59,8 @@ variable "tags" {
   default     = {}
 }
 
-variable "min_count" {
-  description = "Minimum number of nodes for autoscaling."
-  type        = number
-  default     = 0
-}
-
-variable "max_count" {
-  description = "Maximum number of nodes for autoscaling."
+variable "node_count" {
+  description = "The number of nodes in the default node pool."
   type        = number
   default     = 1
 }

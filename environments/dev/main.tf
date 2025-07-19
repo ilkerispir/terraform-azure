@@ -34,8 +34,8 @@ module "aks" {
   resource_group_name    = azurerm_resource_group.rg.name
 
   default_node_pool_name = "default"
-  vm_size                = "Standard_B2s"
-  os_sku                 = "CBLMariner"
+  vm_size                = "Standard_B1s"
+  os_sku                 = "AzureLinux"
   node_count             = 1
 
   subnet_id             = module.vnet.subnet_ids[0]

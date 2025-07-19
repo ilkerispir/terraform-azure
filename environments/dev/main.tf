@@ -41,7 +41,7 @@ module "aks" {
   max_count              = 1
 
   subnet_id             = module.vnet.subnet_ids[0]
-  kubernetes_version    = "1.32.5"
+  kubernetes_version    = "1.33.1"
 
   tags = var.tags
 }

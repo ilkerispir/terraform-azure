@@ -58,3 +58,31 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "network_plugin" {
+  description = "Network plugin to use for AKS"
+  type        = string
+  default     = "azure"
+}
+
+variable "network_policy" {
+  description = "Network policy for controlling traffic between pods"
+  type        = string
+  default     = null
+}
+
+variable "network_data_plane" {
+  description = "Specifies the data plane used for Kubernetes networking"
+  type        = string
+  default     = null
+}
+
+variable "service_cidr" {
+  description = "CIDR for Kubernetes services"
+  type        = string
+}
+
+variable "dns_service_ip" {
+  description = "IP address within the service CIDR for DNS"
+  type        = string
+}

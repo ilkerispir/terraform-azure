@@ -13,6 +13,14 @@ resource "azurerm_kubernetes_cluster" "this" {
     vnet_subnet_id      = var.subnet_id
   }
 
+  network_profile {
+    network_plugin     = "azure"
+    network_policy     = "azure"
+    network_data_plane = "azure"
+    service_cidr       = var.service_cidr
+    dns_service_ip     = var.dns_service_ip
+  }
+
   identity {
     type = "SystemAssigned"
   }

@@ -58,9 +58,3 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-
-variable "node_count" {
-  description = "The number of nodes in the default node pool."
-  type        = number
-  default     = 1
-}

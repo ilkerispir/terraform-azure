@@ -8,7 +8,9 @@ resource "helm_release" "cert_manager" {
 
   values = [
     yamlencode({
-      crds = true
+      crds = {
+        enabled = true
+      }
       prometheus = {
         enabled = false
       }

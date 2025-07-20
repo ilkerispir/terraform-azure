@@ -50,8 +50,6 @@ module "aks" {
 module "ingress_nginx" {
   source      = "../../helm/ingress-nginx"
 
-  kube_config = module.aks.kube_config
-
   providers = {
     kubernetes = kubernetes
     helm       = helm

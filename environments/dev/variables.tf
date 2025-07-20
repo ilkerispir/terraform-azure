@@ -23,6 +23,12 @@ variable "subnet_prefixes" {
   type        = list(string)
 }
 
+variable "domain_name" {
+  description = "The domain name for the DNS zone."
+  type        = string
+  default     = "azure.ispir.dev"
+}
+
 variable "tags" {
   description = "A map of tags to assign to the resources."
   type        = map(string)

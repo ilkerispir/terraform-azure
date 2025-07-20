@@ -55,3 +55,12 @@ module "ingress_nginx" {
     helm       = helm
   }
 }
+
+module "cert_manager" {
+  source      = "../../helm/cert-manager"
+
+  providers = {
+    kubernetes = kubernetes
+    helm       = helm
+  }
+}
